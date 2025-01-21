@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  @keyframes fadeHighlight {
+    0% {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    100% {
+      box-shadow: none;
+    }
+  }
+  
+  .highlighted {
+    animation: fadeHighlight 0.5s ease-out;
+  }
+  
