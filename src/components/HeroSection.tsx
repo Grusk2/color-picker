@@ -15,7 +15,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
 
   return (
     <section
-      className="flex flex-col items-center justify-center h-screen p-8 transition-all duration-300 ease-in-out"
+      className="flex flex-col items-center justify-center flex-grow p-8 transition-all duration-300 ease-in-out"
       style={{
         backgroundColor: background,
         color: text,
@@ -38,7 +38,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ colors }) => {
         style={{
           backgroundColor: accent,
           color: text,
-          border: `2px solid ${primary}`,
         }}
         onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = primary)}
         onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = accent)}

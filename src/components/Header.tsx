@@ -1,10 +1,26 @@
-import React from 'react';
+import React from "react";
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  colors: {
+    background: string;
+    text: string;
+  };
+}
+
+const Header: React.FC<HeaderProps> = ({ colors }) => {
+  const { background, text } = colors;
+
   return (
-    <header style={{ textAlign: 'center', padding: '20px', backgroundColor: '#f4f4f4' }}>
-      <h1>Color Scheme Picker</h1>
-      <p>Pick and preview your color palette in real-time!</p>
+    <header
+      className="w-full py-4 px-8 text-center"
+      style={{
+        backgroundColor: background,
+        color: text,
+        transition: "background-color 0.3s ease, color 0.3s ease",
+      }}
+    >
+      <h1 className="text-2xl font-bold">Color Scheme Picker</h1>
+      <p className="text-sm">Pick and preview your color palette in real-time!</p>
     </header>
   );
 };

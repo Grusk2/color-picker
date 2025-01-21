@@ -1,17 +1,25 @@
-import React from 'react';
+import React from "react";
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  colors: {
+    background: string;
+    text: string;
+  };
+}
+
+const Footer: React.FC<FooterProps> = ({ colors }) => {
+  const { background, text } = colors;
+
   return (
     <footer
+      className="w-full py-4 px-8 text-center"
       style={{
-        textAlign: 'center',
-        padding: '10px',
-        backgroundColor: '#f4f4f4',
-        marginTop: '20px',
-        fontSize: '14px',
+        backgroundColor: background,
+        color: text,
+        transition: "background-color 0.3s ease, color 0.3s ease",
       }}
     >
-      <p>&copy; 2025 Color Picker Project</p>
+      <p className="text-sm">&copy; 2025 Color Picker Project</p>
     </footer>
   );
 };
